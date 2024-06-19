@@ -120,14 +120,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;WIN32;WIN32_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\3rdparty\include\;..\3rdparty\vcpkg\packages\openssl_x64-windows\include;..\3rdparty\vcpkg\packages\glog_x64-windows\include;..\3rdparty\vcpkg\packages\gflags_x64-windows\include;..\3rdparty\vcpkg\packages\libevent_x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\3rdparty\lib\x64\Release;..\3rdparty\vcpkg\packages\glog_x64-windows\lib;..\3rdparty\vcpkg\packages\gflags_x64-windows\lib;..\3rdparty\vcpkg\packages\libevent_x64-windows\lib;..\3rdparty\vcpkg\packages\openssl_x64-windows\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;event.lib;glog.lib;evpp_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

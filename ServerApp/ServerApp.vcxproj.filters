@@ -18,12 +18,18 @@
     <ClCompile Include="ServerApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChatServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="codec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="winmain-inl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

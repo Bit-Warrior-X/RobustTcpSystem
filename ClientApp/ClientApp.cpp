@@ -53,6 +53,7 @@ public:
         }
     }
 
+
 private:
     string getStrFromDOM(Document* doc, string key) {
         if (!doc->HasMember(key)) {
@@ -71,7 +72,7 @@ private:
 
         return (*doc)[key].GetInt();
     }
-
+    
     void OnConnection(const evpp::TCPConnPtr& conn) {
         LOG_INFO << conn->AddrToString() << " is " << (conn->IsConnected() ? "UP" : "DOWN");
 
@@ -211,13 +212,21 @@ int main(int argc, char* argv[]) {
     return 0;
 #endif
 
+    char ch;
+    std::cout << "Press 1 to login and other keys to exit" << endl;
+    std::cin >> ch;
+
+    if (ch != '1')
+        return 0;
+
     evpp::EventLoopThread loop;
     loop.Start(true);
+
     std::string host = "127.0.0.1";
     std::string port = "9099";
-
     ChatClient client(loop.loop(), host + ":" + port);
     client.Connect();
+
     std::string line;
     while (std::getline(std::cin, line)) {
         if (line == "quit") {
